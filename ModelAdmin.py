@@ -3,6 +3,7 @@ class NameModelAdmin(ModelAdmin):
 	inlines = [MODLENAMEInLine,]
 	date_hierarchy = 'models.Field'
     fields = () # or exclyde = ()
+	prepopulated_fields = {'slug': ('title',)} # Manually adding a slug field each time as you type in the Title field
     
     @admin.display(description='TITLE')
 	def upper_case_name(obj):
